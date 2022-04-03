@@ -1,7 +1,7 @@
 ﻿
 namespace ToDo.Helpers
 {
-    public interface IStringDistance
+    public interface IStringMetric
     {
         /// <summary>
         /// Computes and returns the distance between two string

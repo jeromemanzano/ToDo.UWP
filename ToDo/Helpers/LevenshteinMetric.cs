@@ -6,7 +6,7 @@ namespace ToDo.Helpers
     /// This implementation is based on https://www.csharpstar.com/csharp-string-distance-algorithm/#:~:text=The%20Levenshtein%20distance%20between%20two,is%20named%20after%20Vladimir%20Levenshtein and
     /// https://en.wikipedia.org/wiki/Levenshtein_distance#:~:text=Informally%2C%20the%20Levenshtein%20distance%20between,considered%20this%20distance%20in%201965.
     /// </footer>
-    public class LevenshteinDistance : IStringDistance
+    public class LevenshteinMetric : IStringMetric
     {
         /// <inheritdoc/>
         public int Compute(string firstString, string secondString)
