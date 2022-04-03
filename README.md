@@ -20,13 +20,13 @@ This is a To do list app that uses UWP. App's basic function includes adding, ch
 Current search uses Levenshtein distance [^1]. If you want to implement your own string metric then do the following:
 1. Add a class and implement `IStringDistance`
 2. Add the implementation inside `Compute`
-3. replace `_searchAlgorithm` in `CollectionViewBehavior`
+3. replace `_stringMetric` in `CollectionViewBehavior`
 
 ```
 public class CollectionViewBehavior : Behavior<ListView>
 {
 ...
-  private readonly IStringDistance _searchAlgorithm = new LevenshteinDistance();
+  private readonly IStringDistance _stringMetric = new LevenshteinDistance();
 ...
 }
 ```
