@@ -11,7 +11,6 @@
                     <SolidColorBrush x:Key="TargetBackground" Color="White"/>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
-            <!--<SolidColorBrush x:Key="TextFillColorPrimaryBrush" Color="#5E5DEA" />-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

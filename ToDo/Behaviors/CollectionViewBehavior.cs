@@ -10,7 +10,7 @@ namespace ToDo.Behaviors
 {
     public class CollectionViewBehavior : Behavior<ListView>
     {
-        private IStringDistance _algorithm = new LevenshteinDistance();
+        private readonly IStringDistance _stringMetric = new LevenshteinDistance();
 
         public static readonly DependencyProperty ItemsSourceProperty =
             DependencyProperty.Register(nameof(ItemsSource),
@@ -75,7 +75,7 @@ namespace ToDo.Behaviors
             {
                 //TODO: Optimize
                 AssociatedObject.ItemsSource = ItemsSource
-                 .Select(item => (_algorithm.Compute(item, Filter), item))
+                 .Select(item => (_stringMetric.Compute(item, Filter), item))
                  .OrderBy(item => item.Item1)
                  .Where(item => item.Item1 < item.Item2.Length)
                  .Select(item => item.Item2);

@@ -27,7 +27,7 @@ namespace ToDo.ViewModels
             AddItemCommand = new RelayCommand(ExecuteAddItem, CanAddItem);
         }
 
-        public bool CanAddItem()
+        private bool CanAddItem()
         {
             return !string.IsNullOrEmpty(NewItem);
         }

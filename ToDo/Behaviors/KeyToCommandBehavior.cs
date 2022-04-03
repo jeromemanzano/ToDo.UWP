@@ -22,7 +22,7 @@ namespace ToDo.Behaviors
                 new PropertyMetadata(null));
         
         /// <summary>
-        /// Gets or sets the <see cref="System.Windows.Input.ICommand" that will be invoked when <see cref="Key" is pressed/>/> 
+        /// Gets or sets the <see cref="System.Windows.Input.ICommand"/> that will be invoked when <see cref="Key"/> is pressed
         /// </summary>
         public ICommand Command
         {
@@ -40,7 +40,7 @@ namespace ToDo.Behaviors
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="VirtualKey" that will be used for triggering the Command
+        /// Gets or sets the <see cref="VirtualKey"/> that will be used for triggering the Command
         /// </summary>
         public VirtualKey Key { get; set; }
 
