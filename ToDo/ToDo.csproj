@@ -124,7 +124,7 @@
     <Compile Include="Behaviors\CollectionViewBehavior.cs" />
     <Compile Include="Behaviors\KeyToCommandBehavior.cs" />
     <Compile Include="Helpers\IStringMetric.cs" />
-    <Compile Include="Helpers\LevenshteinMetric.cs" />
+    <Compile Include="Helpers\LevenshteinDistance.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

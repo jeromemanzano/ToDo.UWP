@@ -41,7 +41,7 @@ namespace ToDo.Behaviors
         }
         
         // TODO: Inject this and change documentation
-        public IStringMetric StringMetric { get; set; } = new LevenshteinMetric();
+        public IStringMetric StringMetric { get; set; } = new LevenshteinDistance();
 
         private static void OnItemsSourceChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
