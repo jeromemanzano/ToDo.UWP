@@ -125,6 +125,7 @@
     <Compile Include="Behaviors\KeyToCommandBehavior.cs" />
     <Compile Include="Helpers\IStringMetric.cs" />
     <Compile Include="Helpers\LevenshteinDistance.cs" />
+    <Compile Include="IoC.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -165,6 +166,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SimpleInjector">
+      <Version>5.3.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

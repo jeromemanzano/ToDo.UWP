@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ToDo.Helpers;
+using SimpleInjector;
 
 namespace ToDo
 {
@@ -30,6 +22,14 @@ namespace ToDo
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            InitContainer();
+        }
+
+        public void InitContainer()
+        {
+            IoC.Container = new Container();
+            IoC.Container.RegisterSingleton<IStringMetric, LevenshteinDistance>();
+
         }
 
         /// <summary>

@@ -10,6 +10,8 @@ namespace ToDo.Behaviors
 {
     public class CollectionViewBehavior : Behavior<ListView>
     {
+        private readonly IStringMetric _stringMetric;
+
         public static readonly DependencyProperty ItemsSourceProperty =
             DependencyProperty.Register(nameof(ItemsSource),
                 typeof(IEnumerable<string>),
@@ -39,9 +41,11 @@ namespace ToDo.Behaviors
             get => (string)GetValue(FilterProperty);
             set => SetValue(FilterProperty, value);
         }
-        
-        // TODO: Inject this and change documentation
-        public IStringMetric StringMetric { get; set; } = new LevenshteinDistance();
+
+        public CollectionViewBehavior()
+        {
+            _stringMetric = IoC.Container.GetInstance<IStringMetric>();
+        }
 
         private static void OnItemsSourceChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
@@ -76,7 +80,7 @@ namespace ToDo.Behaviors
             {
                 //TODO: Optimize
                 AssociatedObject.ItemsSource = ItemsSource
-                 .Select(item => (StringMetric.Compute(item, Filter), item))
+                 .Select(item => (_stringMetric.Compute(item, Filter), item))
                  .OrderBy(item => item.Item1)
                  .Where(item => item.Item1 < item.Item2.Length)
                  .Select(item => item.Item2);
