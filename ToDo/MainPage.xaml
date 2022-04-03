@@ -48,7 +48,8 @@
 
         <TextBox Text="{Binding NewItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                  Grid.Row="3"
-                 PlaceholderText="Type task here and press Enter key or Add button">
+                 PlaceholderText="Type task here and press Enter key or Add button"
+                 TabIndex="0">
             <i:Interaction.Behaviors>
                 <behaviors:KeyToCommandBehavior Key="Enter"
                                                 Command="{Binding AddItemCommand}"/>
